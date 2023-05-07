@@ -1,6 +1,6 @@
 package main
 
-import "github.com/gieart87/gotoko/app"
+import "github.com/zaytal/eshop_go/app"
 
 func main() {
 	app.Run()

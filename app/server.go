@@ -5,9 +5,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/gieart87/gotoko/app/controllers"
-
 	"github.com/joho/godotenv"
+	"github.com/zaytal/eshop_go/app/controllers"
 )
 
 func getEnv(key, fallback string) string {

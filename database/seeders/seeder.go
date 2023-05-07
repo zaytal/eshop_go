@@ -1,7 +1,8 @@
 package seeders
 
 import (
-	"github.com/gieart87/gotoko/database/fakers"
+	"github.com/zaytal/eshop_go/database/fakers"
+
 	"gorm.io/gorm"
 )
 

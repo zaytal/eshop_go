@@ -40,7 +40,7 @@ func (p *Product) GetProducts(db *gorm.DB, perPage int, page int) (*[]Product, i
 
 	offset := (page - 1) * perPage
 
-	err = db.Debug().Model(&Product{}).Order("created_at desc").Limit(perPage).Offset(offset).Find(&products).Error
+	err = db.Debug().Preload("ProductImages").Model(&Product{}).Order("created_at desc").Limit(perPage).Offset(offset).Find(&products).Error
 	if err != nil {
 		return nil, 0, err
 	}
@@ -71,3 +71,31 @@ func (p *Product) FindByID(db *gorm.DB, productID string) (*Product, error) {
 
 	return &product, nil
 }
+
+//func (p *Product) LinkImage(productImage ProductImage) {
+//	p.ProductImages = append(p.ProductImages, productImage)
+//}
+//
+//func FillProductsWithImages(db *gorm.DB, products []Product) ([]Product, error) {
+//	var productsImages []ProductImage
+//	for _, product := range products {
+//		productsImages = append(productsImages, ProductImage{
+//			Product: product,
+//		})
+//	}
+//	err := db.Debug().Model(&ProductImage{}).Find(&productsImages).Error
+//	if err != nil {
+//		//TODO log
+//		return products, err
+//	}
+//
+//	for _, productImage := range productsImages {
+//		for i, product := range products {
+//			if productImage.ProductID == product.ID {
+//				products[i].LinkImage(productImage)
+//			}
+//		}
+//	}
+//
+//	return products, nil
+//}

@@ -6,7 +6,7 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/gieart87/gotoko/app/models"
+	"github.com/zaytal/eshop_go/app/models"
 
 	"github.com/unrolled/render"
 )

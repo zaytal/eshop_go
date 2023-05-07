@@ -5,15 +5,12 @@ import (
 	"net/http"
 	"strconv"
 
+	"github.com/google/uuid"
 	"github.com/gorilla/mux"
-
 	"github.com/unrolled/render"
+	"github.com/zaytal/eshop_go/app/models"
 
 	"gorm.io/gorm"
-
-	"github.com/google/uuid"
-
-	"github.com/gieart87/gotoko/app/models"
 )
 
 func GetShoppingCartID(w http.ResponseWriter, r *http.Request) string {

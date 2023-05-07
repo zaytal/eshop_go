@@ -95,7 +95,10 @@
                         <div class="single-product">
                             <div class="product-img">
                                 <a href="/products/{{ $product.Slug }}">
-                                    <img src="https://placehold.jp/300x400.png" class="img-fluid" />
+                                    {{range $i, $productImage := $product.ProductImages}}
+                                    <img src="/public/{{ $productImage.Path }}" class="img-fluid" />
+                                    {{break}}
+                                    {{end}}
                                 </a>
                             </div>
                             <div class="product-content">

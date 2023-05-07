@@ -6,14 +6,12 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/gosimple/slug"
-
 	"github.com/bxcodec/faker/v3"
-
 	"github.com/google/uuid"
-
-	"github.com/gieart87/gotoko/app/models"
+	"github.com/gosimple/slug"
 	"github.com/shopspring/decimal"
+	"github.com/zaytal/eshop_go/app/models"
+
 	"gorm.io/gorm"
 )
 

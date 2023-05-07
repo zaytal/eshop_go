@@ -7,12 +7,12 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/gorilla/sessions"
-
-	"github.com/gieart87/gotoko/app/models"
-	"github.com/gieart87/gotoko/database/seeders"
 	"github.com/gorilla/mux"
+	"github.com/gorilla/sessions"
 	"github.com/urfave/cli"
+	"github.com/zaytal/eshop_go/app/models"
+	"github.com/zaytal/eshop_go/database/seeders"
+
 	"gorm.io/driver/mysql"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -84,7 +84,7 @@ func (server *Server) initializeDB(dbConfig DBConfig) {
 		dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", dbConfig.DBUser, dbConfig.DBPassword, dbConfig.DBHost, dbConfig.DBPort, dbConfig.DBName)
 		server.DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	} else {
-		dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=disable TimeZone=Asia/Jakarta", dbConfig.DBHost, dbConfig.DBUser, dbConfig.DBPassword, dbConfig.DBName, dbConfig.DBPort)
+		dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=disable TimeZone=Europe/Moscow", dbConfig.DBHost, dbConfig.DBUser, dbConfig.DBPassword, dbConfig.DBName, dbConfig.DBPort)
 		server.DB, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	}
 

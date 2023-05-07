@@ -5,8 +5,8 @@ import (
 
 	"github.com/bxcodec/faker/v3"
 
-	"github.com/gieart87/gotoko/app/models"
 	"github.com/google/uuid"
+	"github.com/zaytal/eshop_go/app/models"
 	"gorm.io/gorm"
 )
 
