@@ -1,4 +1,4 @@
-module github.com/gieart87/gotoko
+module github.com/zaytal/eshop_go
 
 go 1.15
 
