@@ -1,9 +1,8 @@
 package controllers
 
 import (
-	"net/http"
-
 	"github.com/gorilla/mux"
+	"net/http"
 )
 
 func (server *Server) initializeRoutes() {
@@ -17,6 +16,10 @@ func (server *Server) initializeRoutes() {
 	server.Router.HandleFunc("/carts/update", server.UpdateCart).Methods("POST")
 	server.Router.HandleFunc("/carts/remove/{id}", server.RemoveItemByID).Methods("GET")
 
+	/** API **/
+	server.Router.HandleFunc("/api/products", server.ApiGetProducts).Methods("GET")
+
+	/** assets **/
 	staticFileDirectory := http.Dir("./assets/")
 	staticFileHandler := http.StripPrefix("/public/", http.FileServer(staticFileDirectory))
 	server.Router.PathPrefix("/public/").Handler(staticFileHandler).Methods("GET")
