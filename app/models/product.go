@@ -23,9 +23,9 @@ type Product struct {
 	ShortDescription string          `gorm:"type:text"`
 	Description      string          `gorm:"type:text"`
 	Status           int             `gorm:"default:0"`
-	CreatedAt        time.Time
-	UpdatedAt        time.Time
-	DeletedAt        gorm.DeletedAt
+	CreatedAt        time.Time       `json:"-"`
+	UpdatedAt        time.Time       `json:"-"`
+	DeletedAt        gorm.DeletedAt  `json:"-"`
 }
 
 func (p *Product) GetProducts(db *gorm.DB, perPage int, page int) (*[]Product, int64, error) {
